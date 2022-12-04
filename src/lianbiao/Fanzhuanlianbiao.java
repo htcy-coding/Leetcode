@@ -1,12 +1,11 @@
 package lianbiao;
 
-import java.util.List;
+
 
 //翻转链表
 public class Fanzhuanlianbiao {
 
     public static void main(String[] args) {
-
         ListNode listNode1 = new ListNode(1);
         ListNode listNode12 = new ListNode(2);
         ListNode listNode13 = new ListNode(3);
@@ -44,6 +43,11 @@ public class Fanzhuanlianbiao {
        head.next.next = head;
        head.next = null;
        return listNode;
+       //if (head == null || head.next == null) return head;
+        //        ListNode ans = reverseList(head);
+        //        head.next.next = head.next;
+        //        head.next = null;
+        //        return ans;
     }
 
 
