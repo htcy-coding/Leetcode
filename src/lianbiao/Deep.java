@@ -12,17 +12,52 @@ import java.util.LinkedList;
 public class Deep {
 
 
-    //递归实现1
-    public int findDeep(TreeNode root)
-    {
+    public static void main(String[] args) {
+        TreeNode treeNode = new TreeNode();
+        TreeNode treeNode2 = new TreeNode();
+        TreeNode treeNode3 = new TreeNode();
+        TreeNode treeNode4 = new TreeNode();
+
+        treeNode.left = treeNode2;
+        treeNode2.left = treeNode3;
+        treeNode2.right = treeNode4;
+        System.out.println(findDeep(treeNode));
+    }
+
+
+
+   static public int findDeep(TreeNode root){
         int deep = 0;
-        if(root != null) {
-            int lchilddeep = findDeep(root.left);
-            int rchilddeep = findDeep(root.right);
-            deep = lchilddeep > rchilddeep ? lchilddeep + 1 : rchilddeep + 1;
+        if (root != null) {
+            int leftDeep =  findDeep(root.left);
+            int rightDeep = findDeep(root.right);
+            deep = leftDeep > rightDeep ? leftDeep+1 : rightDeep+1;
         }
         return deep;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+//    //递归实现1
+//    public int findDeep(TreeNode root)
+//    {
+//        int deep = 0;
+//        if(root != null) {
+//            int lchilddeep = findDeep(root.left);
+//            int rchilddeep = findDeep(root.right);
+//            deep = lchilddeep > rchilddeep ? lchilddeep + 1 : rchilddeep + 1;
+//        }
+//        return deep;
+//    }
 
 
     //递归实现2

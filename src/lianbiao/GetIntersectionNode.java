@@ -11,11 +11,30 @@ public class GetIntersectionNode {
 
 
 
+    ListNode getIntersectionNode1(ListNode headA, ListNode headB) {
+        ListNode listNodea = headA;
+        ListNode listNodeb = headB;
+        while (true) {
+            if (listNodea == null) break;
+            while (true) {
+                if (listNodeb == null) break;
+                if (listNodea.value == listNodeb.value)
+                    return listNodea;
+                listNodeb = listNodeb.next;
+            }
+            listNodea = listNodea.next;
+        }
+        return null;
+    }
+
+
+
+
+
     ListNode getIntersectionNode(ListNode headA, ListNode headB) {
 
         ListNode nodea = headA;
         ListNode nodeb = headB;
-
         while (nodea != null) {
             while (nodeb != null){
                 if (nodea.value == nodeb.value)

@@ -2,7 +2,7 @@ package lianbiao;
 
 /**
  * @ClassName: GetKthFromEnd
- * @Description:链表中倒数第k个节点
+ * @Description:获取链表中倒数第k个节点
  * @Author yuyang（yuyang_keep@163.com）
  * @Date 2022/11/29 22:53
  * @Version 1.0
@@ -26,6 +26,21 @@ public class GetKthFromEnd {
             listNode = listNode.next;
         }
     }
+
+    static public ListNode getKthFromEnd2(ListNode head, int k) {
+        ListNode fast = head;
+        ListNode slow = head;
+        for (int i = 0; i < k; i++) {
+            fast = fast.next;
+        }
+        while (true){
+            if (fast == null) break;
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
+
 
    static public ListNode getKthFromEnd(ListNode head, int k) {
         ListNode fast = head;

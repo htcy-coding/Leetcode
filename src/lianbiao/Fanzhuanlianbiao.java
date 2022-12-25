@@ -2,7 +2,7 @@ package lianbiao;
 
 
 
-//翻转链表
+//翻转链表 1
 public class Fanzhuanlianbiao {
 
     public static void main(String[] args) {
@@ -16,12 +16,28 @@ public class Fanzhuanlianbiao {
 
         ListNode ams = fanzhuan1(listNode1);
 //        ListNode t = ams;
-        while (ams != null) {
+        while (true) {
+            if (ams == null) break;
             System.out.println(ams.value);
             ams = ams.next;
         }
 
     }
+
+    static ListNode fanzhuan3(ListNode head) {
+        ListNode curr = head;
+        ListNode pre = null;
+        while (true) {
+            if (curr == null) break;
+            ListNode temp = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = temp;
+        }
+        return pre;
+    }
+
+
 
     //迭代
    static ListNode fanzhuan(ListNode head) {
@@ -43,11 +59,6 @@ public class Fanzhuanlianbiao {
        head.next.next = head;
        head.next = null;
        return listNode;
-       //if (head == null || head.next == null) return head;
-        //        ListNode ans = reverseList(head);
-        //        head.next.next = head.next;
-        //        head.next = null;
-        //        return ans;
     }
 
 

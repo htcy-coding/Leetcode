@@ -2,12 +2,23 @@ package lianbiao;
 
 /**
  * @ClassName: ReverseList
- * @Description:
+ * @Description:  1
  * @Author yuyang（yuyang_keep@163.com）
  * @Date 2022/11/29 23:14
  * @Version 1.0
  */
 public class ReverseList {
+
+
+//    public ListNode reverseList4(ListNode head) {
+//
+//
+//    }
+
+    public static void main(String[] args) {
+
+    }
+
 
 
     public ListNode reverseList(ListNode head) {
@@ -25,10 +36,11 @@ public class ReverseList {
 
     public ListNode reverseList2(ListNode head) {
         if (head == null || head.next == null) return head;
-        reverseList(head.next);
+        ListNode newHead = reverseList(head.next);
         head.next.next = head.next;
         head.next = null;
-        return head;
+        return newHead;
     }
+
 
 }

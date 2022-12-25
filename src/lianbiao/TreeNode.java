@@ -9,8 +9,8 @@ package lianbiao;
  */
 public class TreeNode {
 
-    TreeNode right;
-    TreeNode left;
-    int value;
+   public TreeNode right;
+   public TreeNode left;
+   public int value;
 
 }
