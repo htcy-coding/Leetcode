@@ -45,7 +45,6 @@ public class DeleteDuplicates {
         dummy.next = head;
         ListNode cur = dummy;
         while (cur.next != null ) {
-
             if (cur.next.value == cur.next.next.value) {
                 cur.next = cur.next.next;
             }
@@ -92,5 +91,8 @@ public class DeleteDuplicates {
         }
         return slow.next;
     }
+
+
+
 
 }
